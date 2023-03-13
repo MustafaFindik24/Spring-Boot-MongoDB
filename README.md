@@ -56,6 +56,7 @@ spring.data.mongodb.auto-index-creation=true
 ```
 
 * Modelimizi oluşturduktan ve StudentRepository interface imizde MongoRepository sınıfını extend ettikten sonra uygulama sınıfının içerisinde argüman olarak veri girişini gerçekleştirdik. Bunun yerine service katmanı oluşturulup crud işlemleri ile de işlemler gerçekleştirilebilir.
+
 * Bir bean oluşturup Query ve MongoTemplate sınıfları uygulama içerisinde kullanıldı.
 
 ``` java
@@ -74,4 +75,7 @@ if (students.isEmpty()){
 	System.out.println(student + " öğrencisi kayıtlı.");
 }
 ```
-* 
+* docker-compose.yml dosyamızı çalıştırdıktan ve uygulamamızı ayağa kaldırdıktan sonra http://localhost:8075/ pathine erişip Mongo Express üzerinden veritabanımıza erişiyoruz.
+
+![image](https://user-images.githubusercontent.com/91599453/224640834-f9566e43-0524-4fb4-934d-e20f851abe00.png)
+
