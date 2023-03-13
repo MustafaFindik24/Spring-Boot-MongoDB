@@ -59,19 +59,19 @@ spring.data.mongodb.auto-index-creation=true
 * Bir bean oluşturup Query ve MongoTemplate sınıfları uygulama içerisinde kullanıldı.
 
 ``` java
-			Query query = new Query();
-			query.addCriteria(Criteria.where("email").is(email));
+Query query = new Query();
+query.addCriteria(Criteria.where("email").is(email));
 
-			List<Student> students= mongoTemplate.find(query, Student.class);
+List<Student> students= mongoTemplate.find(query, Student.class);
 
-			if (students.size()>1){
-				throw new IllegalStateException("Bu email ile birden fazla öğrenci bulundu : " + email);
-			}
-			if (students.isEmpty()){
-				System.out.println("Öğrenci ekleniyor : " + student);
-				repository.insert(student);
-			} else {
-				System.out.println(student + " öğrencisi kayıtlı.");
-			}
+if (students.size()>1){
+	throw new IllegalStateException("Bu email ile birden fazla öğrenci bulundu : " + email);
+}
+if (students.isEmpty()){
+	System.out.println("Öğrenci ekleniyor : " + student);
+	repository.insert(student);
+} else {
+	System.out.println(student + " öğrencisi kayıtlı.");
+}
 ```
 * 
