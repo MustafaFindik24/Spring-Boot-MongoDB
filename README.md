@@ -5,6 +5,41 @@
 
 MongoDB, açık kaynak kodlu NoSQL türünde bir veritabanı uygulamasıdır. Bilinen ilişkisel veritabanlarının aksine daha hızlı, daha çevik, daha basit bir ortam sunar. İlişkisel veritabanlarında bulunan table yapısının karşılığı collection, row yapısı document, column yapısını ise field denilen bölümler alır. Veriler döküman halinde JSON formatında tutulur. Ölçeklenebilir bir yapıyı destekler. Daha çok hızlı şekilde veri getirilmesi gereken uygulamalarda kullanılır. Bunlardan birkaçı arama gerektiren uygulamalar, oyunlar, büyük veri uygulamaları olarak örnek verilebilir.
 
-🎯 Spring Boot projesinde MongoDB kullanımı
+# 🎯 Spring Boot projesinde MongoDB kullanımı
 
+* Oluşturduğumuz Spring Boot projemizde pom.xml dosyamıza mongodb dependency sini ekliyoruz.
+
+``` xml
+    <dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-mongodb</artifactId>
+		</dependency>
+```
+* Docker Compose dosyası oluşturularak mongo ve mongo express için iki farklı container oluşturuyoruz.
+
+`` yml
+version: "3"
+services:
+  mongo:
+    image: mongo:latest
+    container_name: mongocon
+    restart: always
+    ports:
+      - '27017:27017'
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: rootuser
+      MONGO_INITDB_ROOT_PASSWORD: rootpass
+  mongo-express:
+    container_name: mongo-express-auth
+    image: mongo-express:latest
+    environment:
+      ME_CONFIG_MONGODB_ADMINUSERNAME: rootuser
+      ME_CONFIG_MONGODB_ADMINPASSWORD: rootpass
+      ME_CONFIG_MONGODB_SERVER: mongo
+      ME_CONFIG_MONGODB_PORT: "27017"
+    ports:
+      - "8075:8081"
+    depends_on:
+      - mongo
+``
 
