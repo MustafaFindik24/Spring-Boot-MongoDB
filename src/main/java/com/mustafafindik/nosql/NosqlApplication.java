@@ -2,7 +2,7 @@ package com.mustafafindik.nosql;
 
 import com.mustafafindik.nosql.model.Address;
 import com.mustafafindik.nosql.model.Gender;
-import com.mustafafindik.nosql.Repository.StudentRepository;
+import com.mustafafindik.nosql.repository.StudentRepository;
 import com.mustafafindik.nosql.model.Student;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
