@@ -11,13 +11,13 @@ MongoDB, açık kaynak kodlu NoSQL türünde bir veritabanı uygulamasıdır. Bi
 
 ``` xml
     <dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-data-mongodb</artifactId>
-		</dependency>
+	<groupId>org.springframework.boot</groupId>
+	<artifactId>spring-boot-starter-data-mongodb</artifactId>
+    </dependency>
 ```
 * Docker Compose dosyası oluşturularak mongo ve mongo express için iki farklı container oluşturuyoruz.
 
-`` yml
+``` yml
 version: "3"
 services:
   mongo:
@@ -41,5 +41,6 @@ services:
       - "8075:8081"
     depends_on:
       - mongo
-``
+```
 
+*
