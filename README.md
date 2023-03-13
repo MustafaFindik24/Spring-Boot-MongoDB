@@ -43,4 +43,14 @@ services:
       - mongo
 ```
 
-*
+* Daha sonra application.properties dosyamız içerisinde gerekli property eklemesini yapıyoruz.
+
+``` properties
+spring.data.mongodb.authentication-database=admin
+spring.data.mongodb.username=rootuser
+spring.data.mongodb.password=rootpass
+spring.data.mongodb.database=mongoDB
+spring.data.mongodb.port=27017
+spring.data.mongodb.host=localhost
+spring.data.mongodb.auto-index-creation=true
+```
