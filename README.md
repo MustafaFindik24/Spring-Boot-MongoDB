@@ -79,3 +79,6 @@ if (students.isEmpty()){
 
 ![image](https://user-images.githubusercontent.com/91599453/224640834-f9566e43-0524-4fb4-934d-e20f851abe00.png)
 
+* Oluşturduğumuz mongoDB isimli veritabanını görüntüleyip içerisindeki student collection ına eriştiğimizde eklediğimiz student lar görülebilir.
+
+![image](https://user-images.githubusercontent.com/91599453/224643772-16c6d68e-9392-4354-b13e-e7edd4a3a45d.png)
